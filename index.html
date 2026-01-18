@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceHub - Class 11-12 Q&A Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-atom"></i>
+            <span>ScienceHub</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#subjects">Subjects</a></li>
+            <li><a href="#ask">Ask Question</a></li>
+            <li><a href="#resources">Resources</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to <span class="highlight">ScienceHub</span></h1>
+            <p>Your one-stop solution for Class 11-12 Science doubts</p>
+            <p class="tagline">Physics • Chemistry • Mathematics • Biology</p>
+            <a href="#subjects" class="btn btn-primary">Explore Subjects</a>
+        </div>
+        <div class="hero-animation">
+            <div class="floating-icons">
+                <i class="fas fa-flask icon-1"></i>
+                <i class="fas fa-calculator icon-2"></i>
+                <i class="fas fa-dna icon-3"></i>
+                <i class="fas fa-bolt icon-4"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section id="subjects" class="subjects">
+        <h2 class="section-title">Choose Your Subject</h2>
+        <div class="subject-grid">
+            <!-- Physics Card -->
+            <div class="subject-card physics" onclick="openSubject('physics')">
+                <div class="card-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>Physics</h3>
+                <p>Mechanics, Thermodynamics, Electromagnetism, Optics & Modern Physics</p>
+                <ul class="topics">
+                    <li>Newton's Laws</li>
+                    <li>Wave Motion</li>
+                    <li>Current Electricity</li>
+                    <li>Semiconductors</li>
+                </ul>
+                <button class="btn btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Chemistry Card -->
+            <div class="subject-card chemistry" onclick="openSubject('chemistry')">
+                <div class="card-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Chemistry</h3>
+                <p>Organic, Inorganic & Physical Chemistry concepts</p>
+                <ul class="topics">
+                    <li>Chemical Bonding</li>
+                    <li>Organic Reactions</li>
+                    <li>Electrochemistry</li>
+                    <li>Coordination Compounds</li>
+                </ul>
+                <button class="btn btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Mathematics Card -->
+            <div class="subject-card mathematics" onclick="openSubject('mathematics')">
+                <div class="card-icon">
+                    <i class="fas fa-square-root-variable"></i>
+                </div>
+                <h3>Mathematics</h3>
+                <p>Calculus, Algebra, Trigonometry & Coordinate Geometry</p>
+                <ul class="topics">
+                    <li>Differential Calculus</li>
+                    <li>Integration</li>
+                    <li>Vectors & 3D</li>
+                    <li>Probability</li>
+                </ul>
+                <button class="btn btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+            <!-- Biology Card -->
+            <div class="subject-card biology" onclick="openSubject('biology')">
+                <div class="card-icon">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h3>Biology</h3>
+                <p>Botany, Zoology, Genetics & Human Physiology</p>
+                <ul class="topics">
+                    <li>Cell Biology</li>
+                    <li>Genetics & Evolution</li>
+                    <li>Human Reproduction</li>
+                    <li>Ecology</li>
+                </ul>
+                <button class="btn btn-card">Explore <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask Question Section -->
+    <section id="ask" class="ask-section">
+        <h2 class="section-title">Ask Your Question</h2>
+        <div class="ask-container">
+            <form id="questionForm" class="question-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="class">Class</label>
+                    <select id="class" required>
+                        <option value="">Select Class</option>
+                        <option value="11">Class 11</option>
+                        <option value="12">Class 12</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="biology">Biology</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="topic">Topic</label>
+                    <input type="text" id="topic" placeholder="e.g., Newton's Laws, Organic Chemistry" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="question">Your Question</label>
+                    <textarea id="question" rows="5" placeholder="Type your question in detail..." required></textarea>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="image">Attach Image (Optional)</label>
+                    <input type="file" id="image" accept="image/*">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Question
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popular Questions Section -->
+    <section id="resources" class="resources">
+        <h2 class="section-title">Popular Questions</h2>
+        <div class="questions-container">
+            <div class="question-card" data-subject="physics">
+                <span class="subject-tag physics-tag">Physics</span>
+                <h4>What is the difference between speed and velocity?</h4>
+                <p>Speed is a scalar quantity (only magnitude), while velocity is a vector quantity (magnitude + direction)...</p>
+                <button class="btn btn-small" onclick="showAnswer(this)">View Answer</button>
+            </div>
+            
+            <div class="question-card" data-subject="chemistry">
+                <span class="subject-tag chemistry-tag">Chemistry</span>
+                <h4>Explain the concept of hybridization in carbon compounds.</h4>
+                <p>Hybridization is the mixing of atomic orbitals to form new hybrid orbitals...</p>
+                <button class="btn btn-small" onclick="showAnswer(this)">View Answer</button>
+            </div>
+            
+            <div class="question-card" data-subject="mathematics">
+                <span class="subject-tag math-tag">Mathematics</span>
+                <h4>How to find the derivative of trigonometric functions?</h4>
+                <p>The derivative of sin(x) is cos(x), derivative of cos(x) is -sin(x)...</p>
+                <button class="btn btn-small" onclick="showAnswer(this)">View Answer</button>
+            </div>
+            
+            <div class="question-card" data-subject="biology">
+                <span class="subject-tag biology-tag">Biology</span>
+                <h4>What is the difference between mitosis and meiosis?</h4>
+                <p>Mitosis produces 2 identical daughter cells, while meiosis produces 4 genetically different cells...</p>
+                <button class="btn btn-small" onclick="showAnswer(this)">View Answer</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subject Modal -->
+    <div id="subjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-atom"></i> ScienceHub</h4>
+                <p>Empowering Class 11-12 students with quality science education.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subjects">Subjects</a></li>
+                    <li><a href="#ask">Ask Question</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Subjects</h4>
+                <ul>
+                    <li><a href="#" onclick="openSubject('physics')">Physics</a></li>
+                    <li><a href="#" onclick="openSubject('chemistry')">Chemistry</a></li>
+                    <li><a href="#" onclick="openSubject('mathematics')">Mathematics</a></li>
+                    <li><a href="#" onclick="openSubject('biology')">Biology</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ScienceHub. Made with ❤️ for Students</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
